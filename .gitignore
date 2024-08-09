@@ -1,0 +1,78 @@
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Wordpress - ignore core, configuration, examples, uploads and logs.
+# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+
+# Core
+#
+# Note: if you want to stage/commit WP core files
+# you can delete this whole section/until Configuration.
+app/wp-admin/
+app/wp-content/index.php
+app/wp-content/languages
+app/wp-content/plugins/index.php
+app/wp-content/themes/index.php
+app/wp-includes/
+app/index.php
+app/license.txt
+app/readme.html
+app/wp-*.php
+app/xmlrpc.php
+
+# Configuration
+app/wp-config.php
+
+# Example themes
+app/wp-content/themes/twenty*/
+
+# Example plugin
+app/wp-content/plugins/hello.php
+
+# Uploads
+app/wp-content/uploads/
+
+# Log files
+app/*.log
+
+# htaccess
+app/.htaccess
+
+# All plugins
+#
+# Note: If you wish to whitelist plugins,
+# uncomment the next line
+#app/wp-content/plugins
+
+# All themes
+#
+# Note: If you wish to whitelist themes,
+# uncomment the next line
+#app/wp-content/themes
+
+# secrets
+.env
