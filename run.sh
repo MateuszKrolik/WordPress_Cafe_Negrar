@@ -3,7 +3,6 @@
 docker build -t mateuszkrolik/cafe-negrar:latest .
 
 docker run -d -p 9000:80 \
-  --name cafe-negrar \
   --network cafe_negrar_app-network \
   -e WORDPRESS_DB_HOST=db:3306 \
   -e WORDPRESS_DB_USER=wordpress \

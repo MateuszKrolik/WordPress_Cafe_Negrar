@@ -1,0 +1,87 @@
+<wpml-config>
+  <elementor-widgets>
+    <widget name="athemes-pricing-table">
+      <fields>
+        <field type="Pricing table: currency">currency</field>
+        <field type="Pricing table: price">price</field>
+        <field type="Pricing table: period">period</field>
+        <field type="Pricing table: name">name</field>
+        <field>features_list</field>
+        <field type="Pricing table: button text">button_text</field>
+        <field type="Pricing table: URL">button_url>url</field>
+      </fields>
+      <fields-in-item items_of="features_list">
+        <field type="Pricing table: feature name">text</field>
+      </fields-in-item>
+    </widget>
+    <widget name="athemes-posts">
+      <fields>
+        <field type="Posts: see all text">see_all_text</field>
+        <field type="Posts: read more text">read_more_text</field>
+      </fields>
+    </widget>    
+    <widget name="athemes-portfolio-ext">
+      <fields>
+        <field type="Portfolio: show all text">show_all_text</field>
+        <field type="Portfolio: inline title text">inline_title_text</field>
+        <field type="Portfolio: read more text">read_more_text</field>
+      </fields>
+    </widget>    
+    <widget name="athemes-portfolio">
+      <fields>
+        <field>portfolio_list</field>
+        <field type="Gallery: show all text">show_all_text</field>
+      </fields>
+      <fields-in-item items_of="portfolio_list">
+        <field type="Gallery: item title">title</field>
+        <field type="Gallery: image URL">image>url</field>
+        <field type="Gallery: item term">term</field>
+        <field type="Gallery: item URL">link>url</field>
+      </fields-in-item>
+    </widget>    
+    <widget name="athemes-employee-carousel">
+      <fields>
+        <field>employee_list</field>
+      </fields>
+      <fields-in-item items_of="employee_list">
+        <field type="Employee carousel: name">person</field>
+        <field type="Employee carousel: position">position</field>
+        <field type="Employee carousel: link URL">link>url</field>
+      </fields-in-item>
+    </widget>    
+    <widget name="sydney-hero-slider">
+      <fields>
+        <field>slides_controls</field>
+      </fields>
+      <fields-in-item items_of="slides_controls">
+        <field type="Slider: heading">slide_heading</field>
+        <field type="Slider: description">slide_description</field>
+        <field type="Slider: button text">button_text</field>
+        <field type="Slider: button URL">button_url>url</field>
+      </fields-in-item>
+    </widget>    
+    <widget name="athemes-employee">
+      <fields>
+        <field type="Employee: name">name</field>
+        <field type="Employee: position">position</field>
+        <field type="Employee: link URL">link>url</field>
+      </fields>
+    </widget>    
+    <widget name="athemes-timeline">
+      <fields>
+        <field>timeline_list</field>
+      </fields>
+      <fields-in-item items_of="timeline_list">
+        <field type="Timeline: title">name</field>
+        <field type="Timeline: text">text</field>
+      </fields-in-item>
+    </widget>    
+    <widget name="athemes-testimonials">
+      <fields-in-item items_of="testimonials_list">
+        <field type="Testimonial: Name" editor_type="LINE">name</field>
+        <field type="Testimonial: Position" editor_type="LINE">position</field>
+        <field type="Testimonial: Testimonial" editor_type="LINE">testimonial</field>
+      </fields-in-item>      
+    </widget>    
+  </elementor-widgets>
+</wpml-config>

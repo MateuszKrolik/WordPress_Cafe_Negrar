@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
 && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd
+    && docker-php-ext-install -j$(nproc) gd mysqli
 #
 # Add PECL extensions, see
 # https://github.com/docker-library/docs/tree/master/php#pecl-extensions
@@ -42,8 +42,6 @@ RUN apt-get update && apt-get install -y \
 # RUN pecl install redis-5.3.7 \
 #    && pecl install xdebug-3.2.1 \
 #    && docker-php-ext-enable redis xdebug
-
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # Use the default production configuration for PHP runtime arguments, see
 # https://github.com/docker-library/docs/tree/master/php#configuration
