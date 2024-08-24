@@ -18,6 +18,9 @@ FROM php:8.3.10-apache
 # Copy app files from the app directory.
 COPY ./app /var/www/html
 
+# Increase the PHP memory limit
+COPY ./custom-php.ini /usr/local/etc/php/conf.d/custom-php.ini
+
 # Your PHP application may require additional PHP extensions to be installed
 # manually. For detailed instructions for installing extensions can be found, see
 # https://github.com/docker-library/docs/tree/master/php#how-to-install-more-php-extensions
@@ -42,6 +45,7 @@ RUN apt-get update && apt-get install -y \
 # RUN pecl install redis-5.3.7 \
 #    && pecl install xdebug-3.2.1 \
 #    && docker-php-ext-enable redis xdebug
+
 
 # Use the default production configuration for PHP runtime arguments, see
 # https://github.com/docker-library/docs/tree/master/php#configuration

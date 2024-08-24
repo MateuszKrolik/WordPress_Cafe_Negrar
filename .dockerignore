@@ -21,7 +21,7 @@
 **/*.jfm
 **/charts
 **/docker-compose*
-**/compose*
+# **/compose* # commented out to prevent dependency error
 !**/composer.json
 !**/composer.lock
 **/Dockerfile*
@@ -30,7 +30,7 @@
 **/obj
 **/secrets.dev.yaml
 **/values.dev.yaml
-**/vendor
+# **/vendor # commented out to prevent dependency error
 LICENSE
 README.md
 run.sh

@@ -20,10 +20,15 @@ tar -xzf latest.tar.gz
 rm latest.tar.gz
 ```
 
-4. Run docker init
-   - 1. Choose the latest stable php-apache image from dockerhub
-   - 2. Choose ./wordpress as project root
-   
+4. Run
+
+```sh
+  docker init
+```
+
+- 1.  Choose the latest stable php-apache image from dockerhub
+- 2.  Choose ./wordpress as project root
+
 5. In Dockerfile uncomment the "gd" section and add "mysqli" to it at the end:
 
 ```yaml
@@ -33,7 +38,7 @@ libjpeg62-turbo-dev \
 libpng-dev \
 && rm -rf /var/lib/apt/lists/* \
 && docker-php-ext-configure gd --with-freetype --with-jpeg \
-&& docker-php-ext-install -j$(nproc) gd mysqli
+&& docker-php-ext-install -j$(nproc) gd mysqli # add "mysqli" here
 ```
 
 6. Edit the Compose file and add a shared network, so the db can be accessed w/o compose later for testing purposes before deployment and add volumes for persistance:
@@ -47,11 +52,8 @@ services:
       - '9000:80'
     depends_on:
       - db
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_DB_NAME: wordpress
+    env_file:
+      - .env
     volumes:
       - ./wordpress:/var/www/html
     networks:
@@ -87,23 +89,20 @@ networks:
   wordpress-network:
 ```
 
-7. Script for building for production outside compose and local testing (the network network part is optional and for local testing only):
+7. Script to build for production outside compose (the "docker run" part is optional and for local testing before deployment only):
 
 ```sh
 #! /bin/bash
 
-docker build --platform=linux/amd64 -t your_name/your_project:latest .
+docker build --platform=linux/amd64 --no-cache -t your_name/your_project:latest .
 
 docker run -d -p 9000:80 \
   --network your_project_wordpress-network \
-  -e WORDPRESS_DB_HOST=your_host \
-  -e WORDPRESS_DB_USER=your_user \
-  -e WORDPRESS_DB_PASSWORD=your_password \
-  -e WORDPRESS_DB_NAME=your_name \
+  --env-file .env \
   your_name/your_project:latest
 ```
 
-8. Push image to dockerhub:
+8. Push image to DockerHub Registry and host it somewhere (remember to provide the "WORDPRESS_DB..." EnvVars in the Cloud Environment):
 
 ```sh
 docker login
