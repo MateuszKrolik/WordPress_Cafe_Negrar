@@ -51,6 +51,8 @@ RUN apt-get update && apt-get install -y \
 # https://github.com/docker-library/docs/tree/master/php#configuration
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
+EXPOSE 80
+
 # Switch to a non-privileged user (defined in the base image) that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
-USER www-data
+# USER www-data
