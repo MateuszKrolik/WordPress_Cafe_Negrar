@@ -1,8 +1,3 @@
-# Redirect HTTP to HTTPS
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
-
 # Only allow direct access to specific Web-available files.
 
 # Apache 2.2

@@ -159,5 +159,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# backups
 ssh_key.txt
 db_dump.sql
+app/wp-content/ai1wm-backups/localhost-20240915-155625-3by2ei.wpress
